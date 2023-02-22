@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="maincontainer"></div>
+    <script>
+      //Create Header Container
+      const maincontainer = document.getElementById("maincontainer");
+      const headerContainer = document.createElement("div");
+      headerContainer.setAttribute("id", "headerContainer");
+      headerContainer.setAttribute("style", "display: block; height: 90px");
+      maincontainer.appendChild(headerContainer);
+
+      //Header 2 Exercise 04
+      const h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode("Exercise 04: JavaScript&DOM"));
+      headerContainer.appendChild(h2);
+
+      //Button Date with Web Worker
+      const button = document.createElement("button");
+      button.appendChild(
+        document.createTextNode("Click me to display Date and Time")
+      );
+      headerContainer.appendChild(button);
+
+      //Define Worker
+      let dateWorker;
+      let buttonState = false;
+      let bgColor = [
+        "#ff0000",
+        "#ff8000",
+        "#ffff00",
+        "#bfff00",
+        "#40ff00",
+        "#00ffff",
+      ];
+      let color = [
+        "#00ffbf",
+        "#ffffff",
+        "#000000",
+        "#8000ff",
+        "#ff00ff",
+        "#0000ff",
+      ];
+      let colorIndex = 0;
+      startWorker = () => {
+        dateWorker = new Worker("./dateWorker.js");
+        dateWorker.onmessage = (event) => {
+          // console.log(colorIndex);
+          // console.log(event.data);
+          button.style.color = color[colorIndex];
+          button.style.backgroundColor = bgColor[colorIndex];
+          button.textContent = event.data;
+          colorIndex = (colorIndex + 1) % 6;
+        };
+      };
+      stopWorker = () => {
+        dateWorker.terminate();
+        dateWorker = null;
+      };
+      //Button Web Worker onclick Event
+      button.onclick = () => {
+        buttonState = !buttonState;
+        if (buttonState) {
+          button.style.position = "fixed";
+          button.style.top = 0;
+          button.style.right = 0;
+          startWorker();
+        } else {
+          button.style.position = null;
+          stopWorker();
+        }
+      };
+
+      //Personal Div Element
+      const personalContainer = document.createElement("div");
+      const personalText = [
+        "Punnawit Wachirasethaherun, ID: 64010516",
+        "Subject: Web Application Development",
+        "Semester: 2",
+      ];
+
+      //Personal Header
+      const personalHeader = document.createElement("span");
+      personalHeader.appendChild(document.createTextNode("Personal Info"));
+      personalHeader.setAttribute(
+        "style",
+        "text-decoration:underline; color:pink; cursor:pointer;"
+      );
+      personalContainer.appendChild(personalHeader);
+      const personalList = document.createElement("ul");
+      personalList.style.display = "None";
+      for (i = 0; i < personalText.length; i++) {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(personalText[i]));
+        personalList.appendChild(li);
+      }
+
+      //Personal Header clicks event
+      let showPersonal = false;
+      personalHeader.onclick = () => {
+        showPersonal = !showPersonal;
+        if (showPersonal) {
+          personalList.style.display = "block";
+        } else {
+          personalList.style.display = "none";
+        }
+      };
+      personalHeader.onmouseover = () => {
+        personalHeader.style.color = "blue";
+        personalHeader.style.backgroundColor = "yellow";
+      };
+      personalHeader.onmouseleave = () => {
+        personalHeader.style.color = "pink";
+        personalHeader.style.backgroundColor = "unset";
+      };
+      personalContainer.appendChild(personalList);
+      maincontainer.appendChild(personalContainer);
+
+      //Snapshot Header
+      const snapshotsHeader = document.createElement("h1");
+      snapshotsHeader.appendChild(document.createTextNode("Snapshots"));
+      maincontainer.appendChild(snapshotsHeader);
+
+      //Snapshot list
+      const ul = document.createElement("ul");
+      const items = ["Fireworks", "Crest", "Action", "Buffalo"];
+      const snapshotItems = [
+        "https://pbs.twimg.com/media/EdtcBBYWkAIYXe9.jpg",
+        "https://www.creativefabrica.com/wp-content/uploads/2020/05/22/Royal-Crest-Coat-of-Arms-Graphics-4182626-1.png",
+        "https://yanivshoval.files.wordpress.com/2015/05/action-istock_000018662891small.jpg",
+        "https://a-z-animals.com/media/2021/07/Heaviest-Animals_-Bovini.jpg",
+      ];
+
+      //Snapshot Image
+      const snapshotImage = document.createElement("img");
+      snapshotImage.src =
+        "https://www.ce.kmitl.ac.th/api/main/banner/download/1";
+      snapshotImage.style.width = "1200px";
+      maincontainer.appendChild(ul);
+      maincontainer.appendChild(snapshotImage);
+      for (let i = 0; i < items.length; i++) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.appendChild(document.createTextNode(items[i]));
+        a.id = items[i];
+        a.style.cursor = "pointer";
+        a.style.textDecoration = "underline";
+        a.style.color = "blue";
+        li.appendChild(a);
+        ul.appendChild(li);
+        a.onclick = () => {
+          snapshotImage.src = snapshotItems[i];
+        };
+      }
+    </script>
+  </body>
+</html>

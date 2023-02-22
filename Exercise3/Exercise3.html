@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra Petch"
+      rel="stylesheet"
+    />
+
+    <title>Exercise 3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Chakra Petch";
+      background-color: #121212;
+      position: relative;
+    }
+
+    nav {
+      background-color: #181818 !important;
+      font-size: 18px !important;
+    }
+
+    nav .navbar-brand {
+      font-size: 24px !important;
+    }
+
+    nav a {
+      transition: 0.3s;
+      color: white !important;
+    }
+
+    .nav-item a {
+      color: white !important;
+    }
+
+    nav a.navbar-brand:hover {
+      color: #00ff00 !important;
+    }
+
+    .nav-item a#ap1:hover {
+      color: cyan !important;
+    }
+
+    .nav-item a#ap2:hover {
+      color: #ff0000 !important;
+    }
+
+    .nav-item a#ap3:hover {
+      color: #ff00ff !important;
+    }
+
+    .nav-item a#ap4:hover {
+      color: #0000ff !important;
+    }
+
+    .nav-item a#ap5:hover {
+      color: #ffff00 !important;
+    }
+
+    #home {
+      height: 100vh;
+      color: #fff;
+      font-size: 36px;
+      color: #00ff00;
+    }
+
+    #home div img {
+      width: 200px;
+    }
+
+    #home div p span {
+      animation: 1s blink step-end infinite;
+    }
+
+    #section1 {
+      height: 100vh;
+      color: aqua;
+      overflow: hidden;
+    }
+
+    #section1 div div {
+      width: 400px;
+      font-size: 18px;
+    }
+    #section1 h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+    #section1 img {
+      width: 400px;
+    }
+
+    #section2 {
+      height: 100vh;
+      color: #ff0000;
+      overflow: hidden;
+    }
+
+    #section2 div div {
+      width: 400px;
+      font-size: 18px;
+    }
+    #section2 h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+    #section2 img {
+      width: 400px;
+    }
+
+    #section3 {
+      height: 100vh;
+      color: #ff00ff;
+      overflow: hidden;
+    }
+
+    #section3 div div {
+      width: 400px;
+      font-size: 18px;
+    }
+    #section3 h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+    #section3 img {
+      width: 400px;
+    }
+
+    #section4 {
+      height: 100vh;
+      color: #0000ff;
+      overflow: hidden;
+    }
+    #section4 div div {
+      width: 400px;
+      font-size: 18px;
+    }
+    #section4 h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+    #section4 img {
+      width: 400px;
+    }
+
+    #section5 {
+      height: 90vh;
+      animation: rainbow 2.5s linear;
+      animation-iteration-count: infinite;
+      overflow: hidden;
+    }
+
+    #section5 div h1 {
+      width: 500px;
+      font-size: 72px;
+    }
+    #footer {
+      height: 10vh;
+      color: white;
+      background-color: #181818;
+      border-top: 3px solid gray;
+    }
+    #footer div a i {
+      transition: 0.3s;
+      color: white;
+      font-size: 36px;
+    }
+    .d-flex.flex-column {
+      gap: 10px;
+    }
+    #footer.d-flex.flex-column {
+      gap: 0;
+    }
+    #footer p {
+      font-size: 18px;
+      margin-bottom: 0.5vh;
+    }
+    #footer div.d-flex.flex-row {
+      gap: 40px;
+    }
+    #footer #youtube-button a i:hover {
+      color: #ff0000;
+    }
+    #footer #github-button a i:hover {
+      color: purple;
+    }
+    #footer #ig-button a i:hover {
+      color: #ff00ff;
+    }
+    @keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: #00ff00;
+      }
+    }
+    @keyframes rainbow {
+      100%,
+      0% {
+        color: rgb(255, 0, 0);
+      }
+      8% {
+        color: rgb(255, 127, 0);
+      }
+      16% {
+        color: rgb(255, 255, 0);
+      }
+      25% {
+        color: rgb(127, 255, 0);
+      }
+      33% {
+        color: rgb(0, 255, 0);
+      }
+      41% {
+        color: rgb(0, 255, 127);
+      }
+      50% {
+        color: rgb(0, 255, 255);
+      }
+      58% {
+        color: rgb(0, 127, 255);
+      }
+      66% {
+        color: rgb(0, 0, 255);
+      }
+      75% {
+        color: rgb(127, 0, 255);
+      }
+      83% {
+        color: rgb(255, 0, 255);
+      }
+      91% {
+        color: rgb(255, 0, 127);
+      }
+    }
+    @media only screen and (max-width: 576px) {
+      #home div img {
+        width: 100px;
+      }
+
+      #home {
+        font-size: 16px;
+      }
+
+      #section1 img {
+        width: 200px;
+      }
+
+      #section1 h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+
+      #section1 div div {
+        width: 300px;
+        font-size: 12px;
+      }
+
+      #section2 img {
+        width: 200px;
+      }
+
+      #section2 h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+
+      #section2 div div {
+        width: 300px;
+        font-size: 12px;
+      }
+
+      .d-flex.flex-column {
+        gap: 5px;
+      }
+
+      #section3 img {
+        width: 200px;
+      }
+
+      #section3 h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+
+      #section3 div div {
+        width: 300px;
+        font-size: 12px;
+      }
+
+      #section4 img {
+        width: 200px;
+      }
+
+      #section4 h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+
+      #section4 div div {
+        width: 300px;
+        font-size: 12px;
+      }
+      #section5 div h1 {
+        width: 500px;
+        font-size: 48px;
+      }
+    }
+
+    @media only screen and (min-width: 576px) and (max-width: 768px) {
+      #home {
+        font-size: 24px;
+      }
+      #home div img {
+        width: 150px;
+      }
+      #section1 img {
+        width: 300px;
+      }
+      #section1 div div {
+        font-size: 16px;
+      }
+      #section1 h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      #section2 img {
+        width: 300px;
+      }
+      #section2 div div {
+        font-size: 16px;
+      }
+      #section2 h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      #section3 img {
+        width: 300px;
+      }
+      #section3 div div {
+        font-size: 16px;
+      }
+      #section3 h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      #section4 img {
+        width: 300px;
+      }
+      #section4 div div {
+        font-size: 16px;
+      }
+      #section4 h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      #section5 div {
+        width: 400px;
+        font-size: 16px;
+      }
+      #section5 div h1 {
+        width: 500px;
+        font-size: 64px;
+      }
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Home</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                id="ap1"
+                class="d-flex nav-link justify-content-center"
+                href="#section1"
+                >Paragraph 1</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                id="ap2"
+                class="d-flex nav-link justify-content-center"
+                href="#section2"
+                >Paragraph 2</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                id="ap3"
+                class="d-flex nav-link justify-content-center"
+                href="#section3"
+                >Paragraph 3</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                id="ap4"
+                class="d-flex nav-link justify-content-center"
+                href="#section4"
+                >Paragraph 4</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                id="ap5"
+                class="d-flex nav-link justify-content-center"
+                href="#section5"
+                >Conclusion</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      id="home"
+      class="container-fluid d-flex justify-content-center align-items-center"
+    >
+      <div>
+        <img
+          src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png"
+        />
+      </div>
+      <div>
+        <p>
+          $ whoami
+          <br />
+          pickausername<span class="blinking-cursor">|</span>
+          <br />
+          philosopher of meme education
+        </p>
+      </div>
+    </div>
+    <div
+      id="section1"
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <img
+        src="https://i.ytimg.com/vi/_RPkBzv2jYc/maxresdefault.jpg"
+        alt="Suisei Talalalalala."
+      />
+      <h1>Suisei Talalala</h1>
+      <div
+        class="container-fluid d-flex flex-md-row flex-column justify-content-center align-items-center"
+      >
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section2"
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <img
+        src="https://pbs.twimg.com/profile_images/1318385887214936065/MVXmYY99_400x400.jpg"
+        alt="Daeng Guitar"
+      />
+      <h1>Daeng Guitar</h1>
+      <div
+        class="container-fluid d-flex flex-md-row flex-column justify-content-center align-items-center"
+      >
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section3"
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <img
+        src="https://us-tuna-sounds-images.voicemod.net/f2704a30-e782-4217-9ac1-0ebb512c7dba-1664217479095.png"
+        alt="ํYou shall not survive, ****!"
+      />
+      <h1>You shall not survive, ****!</h1>
+      <div
+        class="container-fluid d-flex flex-md-row flex-column justify-content-center align-items-center"
+      >
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section4"
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <img
+        src="https://i.kym-cdn.com/entries/icons/original/000/012/978/cover1.jpg"
+        alt="Daeng Guitar"
+      />
+      <h1>Nanomachines, son.</h1>
+      <div
+        class="container-fluid d-flex flex-md-row flex-column justify-content-center align-items-center"
+      >
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
+            metus dictum at tempor. Massa placerat duis ultricies lacus sed
+            turpis. Aliquet sagittis id consectetur purus ut faucibus pulvinar
+            elementum integer. Sapien nec sagittis aliquam malesuada bibendum
+            arcu. Velit sed ullamcorper morbi tincidunt ornare. Rutrum quisque
+            non tellus orci ac auctor augue mauris augue. Posuere urna nec
+            tincidunt praesent semper feugiat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section5"
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="justify-content-center align-items-center">
+        <h1 class="text-center">That's all folks.</h1>
+        <p class="text-center">
+          Everything is connected, connection is a power.
+        </p>
+      </div>
+    </div>
+    <div
+      id="footer"
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <p class="text-center">Follow me</p>
+      <div
+        class="container-fluid d-flex flex-row justify-content-center align-items-center"
+      >
+        <div id="youtube-button">
+          <a href="https://youtu.be/dQw4w9WgXcQ"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div id="github-button">
+          <a href="https://github.com/Skul1CrowN"
+            ><i class="fa fa-github" aria-hidden="true"></i
+          ></a>
+        </div>
+        <div id="ig-button">
+          <a href="https://www.instagram.com/skul1.b04t/"
+            ><i class="fa fa-instagram" aria-hidden="true"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
