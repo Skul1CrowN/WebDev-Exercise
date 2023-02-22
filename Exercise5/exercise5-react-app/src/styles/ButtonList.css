@@ -1,0 +1,21 @@
+.ButtonList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  column-gap: 20px;
+}
+
+.scoreTextDiv {
+  border-radius: 10px;
+  color: blueviolet;
+  background-color: lime;
+  padding: 10px;
+  border: 2px solid black;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.buttonVote {
+  width: 120px;
+  height: 35px;
+}
