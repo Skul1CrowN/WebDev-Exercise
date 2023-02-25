@@ -1,0 +1,15 @@
+.Card {
+  background-color: bisque;
+  border: solid 2px black;
+  border-radius: 15px;
+  width: 60vw;
+  color: black;
+  padding: 25px;
+}
+.food-data {
+  text-align: left;
+  display: flex;
+}
+.Card img {
+  width: 250px;
+}

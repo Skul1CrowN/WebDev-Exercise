@@ -1,5 +1,5 @@
-import "../styles/App.css";
-import CardList from "./CardList";
+import "./styles/App.css";
+import CardList from "./components/CardList";
 
 const App = () => {
   const foodData = [
